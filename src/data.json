@@ -1,0 +1,101 @@
+[
+  {
+    "id": 432044,
+    "title": "Entire House",
+    "submitted_by": "Ostuni",
+    "info": "I SETTE CONI - TRULLO EDERA",
+    "vote": 74,
+    "image": {
+      "src": "https://a0.muscache.com/im/pictures/15273358/d7329e9a_original.jpg?aki_policy=large"
+    },
+    "available": false
+  },
+  {
+    "id": 530250,
+    "title": "A House to die in",
+    "submitted_by": "Isla Mujeres",
+    "info": "The World Famous Seashell House ~ Casa Caracol",
+    "vote": 249,
+    "image": {
+      "src": "https://a0.muscache.com/im/pictures/6722906/b4bc6418_original.jpg?aki_policy=large"
+    },
+    "available": true
+  },
+  {
+    "id": 1415908,
+    "title": "Treehouse",
+    "submitted_by": "Atlanta",
+    "info": "Secluded Intown Treehouse",
+    "vote": 375,
+    "image": {
+      "src": "https://a0.muscache.com/im/pictures/21611933/43f6de69_original.jpg?aki_policy=large"
+    },
+    "available": false
+  },
+  {
+    "id": 3993887,
+    "title": "Hut",
+    "submitted_by": "Armenia",
+    "info": "Romantic Cabana with view",
+    "vote": 40,
+    "image": {
+      "src": "https://a0.muscache.com/im/pictures/65441227/bb1eb2dd_original.jpg?aki_policy=large"
+    },
+    "available": false
+  },
+  {
+    "id": 32694,
+    "title": "Entire House",
+    "submitted_by": "Joshua Tree",
+    "info": "The Joshua Tree House",
+    "vote": 285,
+    "image": {
+      "src": "https://a0.muscache.com/im/pictures/812e040f-6f6f-4cae-ad67-66c050b57c1f.jpg?aki_policy=large"
+    },
+    "available": false
+  },
+  {
+    "id": 1720832,
+    "title": "Earth house",
+    "submitted_by": "Mayne Island",
+    "info": "Unique Cob Cottage",
+    "vote": 120,
+    "image": {
+      "src": "https://a0.muscache.com/im/pictures/26003118/06bf6fed_original.jpg?aki_policy=large"
+    },
+    "available": false
+  },
+  {
+    "id": 8357,
+    "title": "Dome house",
+    "submitted_by": "Aptos",
+    "info": "Mushroom Dome Cabin: #1  on airbnb in the world",
+    "vote": 130,
+    "image": {
+      "src": "https://a0.muscache.com/im/pictures/140333/3ab8f121_original.jpg?aki_policy=large"
+    },
+    "available": false
+  },
+  {
+    "id": 13253,
+    "title": "Hotel room",
+    "submitted_by": "Cumbria",
+    "info": "Stay in Britain's favourite Castle",
+    "vote": 213,
+    "image": {
+      "src": "https://a0.muscache.com/im/pictures/49398520/a3b3f151_original.jpg?aki_policy=large"
+    },
+    "available": false
+  },
+  {
+    "id": 9437423,
+    "title": "Entire villa",
+    "submitted_by": "Bentong",
+    "info": "Rest. Pause. Rainforest Retreat",
+    "vote": 232,
+    "image": {
+      "src": "https://a0.muscache.com/im/pictures/7fcc8f74-38b1-4909-a809-6524aaf8f507.jpg?aki_policy=large"
+    },
+    "available": false
+  }
+]

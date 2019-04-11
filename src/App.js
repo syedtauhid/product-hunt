@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { PageHeader, SearchBox } from './components';
 import './App.css';
+import products from "./data";
 
 class App extends Component {
+  state = {
+    searchText: '',
+    products
+  };
+
+  onTextChange(searchText){
+    this.setState({ searchText });
+    this.searchProducts(searchText);
+  }
+
+  searchProducts(text) {
+    const { products } = this.state;
+    products.find()
+  }
+
   render() {
+    const { products, searchText } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="container">
+        <PageHeader title="Popular Products"/>
+        <SearchBox text={ searchText } onTextChange={(text) => this.onTextChange(text)} placeholder="Search products"/>
+        <ProductList products={ products }/>
       </div>
     );
   }
