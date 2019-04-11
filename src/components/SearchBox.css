@@ -1,0 +1,16 @@
+.search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.search-input input {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.search-icon {
+    font-size: 20px;
+    color: #666;
+}
