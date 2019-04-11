@@ -10,7 +10,10 @@ const SearchBox = ({ text, placeholder, onTextChange }) => {
                     <i className="fas far fa-search mt-2"></i>
                 </span>
                 <input type="text" value={ text } className="form-control input-lg" onChange={ (e) => onTextChange(e.currentTarget.value)}  placeholder={ placeholder } />
-                <button className="btn btn-link" type="button" onClick={()=>onTextChange('')}><i className="fas far fa-times"></i></button>
+                {
+                    text &&
+                    <button className="btn btn-link" type="button" onClick={() => onTextChange('')}><i className="fas far fa-times"></i></button>
+                }
             </div>
         </div>
     )

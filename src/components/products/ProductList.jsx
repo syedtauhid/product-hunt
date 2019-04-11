@@ -14,7 +14,8 @@ const ProductList = ({ products, onVote }) => {
         
         <div className="mt-4">
             {
-                products && products.map((product,  key) => <ProductRow product={product} key={key} onVote={(count) => onVote(product.id, count)} />)
+                products && products.map((product, key) =>
+                    <ProductRow product={product} key={key} onVote={(count) => onVote(product.id, count)} />)
             }
         </div>
     );
