@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ProductRow from './ProductRow';
 
 const ProductList = ({ products, onVote }) => {
-    if(!products.length) {
+    if(!products || !products.length) {
         return(
             <p className="text-center text-muted mt-4 lead">
                 <i class="far fa-frown"></i> No products found

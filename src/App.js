@@ -6,23 +6,24 @@ import products from "./data";
 class App extends Component {
   state = {
     searchText: '',
-    products: this.searchAndSortProducts()
+    products: this.performSearchAndSort()
   };
 
   onTextChange(searchText){
     this.setState({ searchText });
-    this.setState({ products: this.searchAndSortProducts(searchText) });
+    const products = this.performSearchAndSort(searchText, false);
+    this.setState({ products });
   }
 
-  searchAndSortProducts(text) {
-    const filteredProducts = text ? products.filter(p => p.title.includes(text)) : products;
-    filteredProducts.sort((a, b) => b.vote - a.vote);
-    return filteredProducts;
+  performSearchAndSort(searchText = '', sort = true) {
+    const filtered = searchText ? products.filter(p => p.title.includes(searchText)) : products;
+    return sort ? filtered.sort((a, b) => b.vote - a.vote) : filtered;
   }
 
   handleVote(id, count) {
-    products.find(p=>p.id === id).vote = count;
-    this.setState({ products: this.searchAndSortProducts() });
+    products.find(p => p.id === id).vote = count;
+    const filtered = this.performSearchAndSort(this.state.searchText);
+    this.setState({ products: filtered });
   }
 
   render() {

@@ -27,7 +27,7 @@ SearchBox.propTypes = {
 
 SearchBox.defaultProps = {
     text: '',
-    placeholder: 'search'
+    placeholder: 'Search'
 }
 
 export default SearchBox;
