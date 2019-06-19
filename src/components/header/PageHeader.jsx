@@ -6,7 +6,7 @@ import { AuthContext } from '../../context/AuthContext';
 class PageHeader extends Component {
     render() {
         const { logoText, searchText, onTextChange } = this.props;
-        const { session, logIn, logOut } = this.context;
+        const { session, openLoginModal, logOut } = this.context;
         return (
             <nav className="navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
                 <a className="navbar-brand font-weight-bolder" href="#"><i className="fab fa-product-hunt"></i> { logoText }</a>
@@ -20,7 +20,7 @@ class PageHeader extends Component {
                         </button>
                     </div>
                     :
-                    <button type="button" onClick={ logIn } className="btn text-white ml-auto">
+                    <button type="button" onClick={ openLoginModal } className="btn text-white ml-auto">
                         <i className="fas fa-sign-in-alt"></i> Sign in
                     </button>
                 }
