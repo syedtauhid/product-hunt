@@ -1,13 +1,49 @@
 import React, { Component } from 'react';
-import { PageHeader, SearchBox, ProductList } from './components';
+import { PageHeader, ProductList } from './components';
+import { session, AuthContext } from './context/AuthContext';
 import './App.css';
 import products from "./data";
 
 class App extends Component {
-  state = {
-    searchText: '',
-    products: this.performSearchAndSort()
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      user: {
+        session,
+        logIn: this.logIn,
+        logOut: this.logOut,
+      },
+      searchText: '',
+      products: this.performSearchAndSort()
+    };
+    this.logIn = this.logIn.bind(this);
+    this.logOut = this.logOut.bind(this);
+    this.onTextChange = this.onTextChange.bind(this);
+    this.handleVote = this.handleVote.bind(this);
+  }
+
+  logIn = (userName) => {
+    session.authorized = true;
+    session.userName = "tauhid";
+    this.saveSession();
+  }
+
+  logOut = () => {
+    session.authorized = false;
+    session.userName = null;
+    this.saveSession();
+  }
+
+  saveSession() {
+    const user = this.state.user;
+    this.setState({
+      user: {
+        ...user,
+        session
+      }
+    });
+  }
 
   onTextChange(searchText){
     this.setState({ searchText });
@@ -20,20 +56,25 @@ class App extends Component {
     return sort ? filtered.sort((a, b) => b.vote - a.vote) : filtered;
   }
 
-  handleVote(id, count) {
-    products.find(p => p.id === id).vote = count;
-    const filtered = this.performSearchAndSort(this.state.searchText);
-    this.setState({ products: filtered });
+  handleVote(id, increment) {
+    const { user } = this.state;
+    if(user.session.authorized) {
+      const product = products.find(p => p.id === id);
+      product.vote = increment ? ++product.vote : --product.vote;
+      const filtered = this.performSearchAndSort(this.state.searchText);
+      this.setState({ products: filtered });
+    }
   }
 
   render() {
     const { products, searchText } = this.state;
     return (
-      <div className="container">
-        <PageHeader title="Popular Products"/>
-        <SearchBox text={ searchText } onTextChange={ (text) => this.onTextChange(text)} placeholder="Search products"/>
-        <ProductList products={ products } onVote={ (id, vote)=> this.handleVote(id, vote) }/>
-      </div>
+      <AuthContext.Provider value={ this.state.user }>
+        <PageHeader logoText="Product Hunt" searchText={ searchText } onTextChange={ this.onTextChange }/>
+        <div className="container">
+          <ProductList products={ products } onVote={ this.handleVote }/>
+        </div>
+      </AuthContext.Provider>
     );
   }
 }
