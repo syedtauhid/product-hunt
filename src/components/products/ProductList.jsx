@@ -1,23 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProductRow from './ProductRow';
+import FlipMove from 'react-flip-move';
 
 const ProductList = ({ products, onVote }) => {
     if(!products || !products.length) {
         return(
-            <p className="text-center text-muted mt-4 lead">
+            <p className="text-center text-muted mt-5 lead">
                 <i class="far fa-frown"></i> No products found
             </p>
         );
     }
     return (
         
-        <div className="mt-4">
+        <FlipMove className="mt-4">
             {
-                products && products.map((product, key) =>
-                    <ProductRow product={product} key={key} onVote={(count) => onVote(product.id, count)} />)
+                products.map((product) =>
+                    <ProductRow product={product} key={product.id} onVote={(inc) => onVote(product.id, inc)} />)
             }
-        </div>
+        </FlipMove>
     );
 }
 
