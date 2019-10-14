@@ -1,4 +1,4 @@
-# react-assignment-01
+# Simple Product hunt site using react
 
 Lets learn react. Assignment 01
 
